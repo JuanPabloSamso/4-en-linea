@@ -9,8 +9,8 @@ class TestInLine(unittest.TestCase):
 
     def test_players(self):
         game = InLine()
-        self.assertEqual(game.player1,'x')
-        self.assertEqual(game.player2,'y')
+        self.assertEqual(game.player1,'X')
+        self.assertEqual(game.player2,'Y')
 
     def test_available(self):
         game = InLine()
@@ -20,7 +20,7 @@ class TestInLine(unittest.TestCase):
     def test_throw_coin(self):
         game = InLine()
         game.throw_coin(0)
-        self.assertEqual(game.board[5][0],'x')
+        self.assertEqual(game.board[5][0],'X')
 
     def test_turn1(self):
         game = InLine()
@@ -47,7 +47,7 @@ class TestInLine(unittest.TestCase):
     def test_check_col_win(self):
         game = InLine()
         game.check_col()
-        game.board = [['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
+        game.board = [['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
         self.assertEqual(game.check_col(),True)
 
     def test_check_row_empty(self):
@@ -59,7 +59,7 @@ class TestInLine(unittest.TestCase):
     def test_check_row_win(self):
         game = InLine()
         game.check_row()
-        game.board = [[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ','x','x','x','x']]
+        game.board = [[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ','X','X','X','X']]
         self.assertEqual(game.check_row(),True)
 
     def test_check_diag_up_empty(self):
@@ -71,7 +71,7 @@ class TestInLine(unittest.TestCase):
     def test_check_diag_up_win(self):
         game = InLine()
         game.check_diag_up()
-        game.board = [[' ',' ',' ',' ',' ',' ','x'],[' ',' ',' ',' ',' ','x',' '],[' ',' ',' ',' ','x',' ',' '],[' ',' ',' ','x',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
+        game.board = [[' ',' ',' ',' ',' ',' ','X'],[' ',' ',' ',' ',' ','X',' '],[' ',' ',' ',' ','X',' ',' '],[' ',' ',' ','X',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
         self.assertEqual(game.check_diag_up(),True)
 
     def test_check_diag_down_empty(self):
@@ -83,13 +83,13 @@ class TestInLine(unittest.TestCase):
     def test_check_diag_down_win(self):
         game = InLine()
         game.check_diag_down()
-        game.board = [['x',' ',' ',' ',' ',' ',' '],[' ','x',' ',' ',' ',' ',' '],[' ',' ','x',' ',' ',' ',' '],[' ',' ',' ','x',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
+        game.board = [['X',' ',' ',' ',' ',' ',' '],[' ','X',' ',' ',' ',' ',' '],[' ',' ','X',' ',' ',' ',' '],[' ',' ',' ','X',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
         self.assertEqual(game.check_diag_down(),True)
 
     def test_check_winner_1(self):
         game = InLine()
         game.check_winner()
-        game.board = [['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],['x',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
+        game.board = [['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],['X',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' '],[' ',' ',' ',' ',' ',' ',' ']]
         self.assertEqual(game.check_winner(),True)
 
     def test_check_winner_2(self):
